@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location - The Purna Fork</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#D4AF37">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>The Purna Fork</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="reservation.html" class="nav-link">Reservation</a></li>
+                <li class="nav-item"><a href="location.html" class="nav-link active">Location</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero location-hero">
+        <div class="hero-content">
+            <h1>Find Us</h1>
+            <p>Located in the heart of the city</p>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <section class="location-section">
+        <div class="container">
+            <div class="location-content">
+                <div class="location-info">
+                    <h2>Visit The Purna Fork</h2>
+                    <p>We're conveniently located in the heart of downtown, easily accessible by car or public transportation.</p>
+
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Address</h3>
+                            <p>123 Culinary Street<br>Food City, FC 12345<br>United States</p>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>Phone</h3>
+                            <p>Main: (555) 123-4567<br>Reservations: (555) 123-4568</p>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email</h3>
+                            <p>info@thepurnafork.com<br>reservations@thepurnafork.com</p>
+                        </div>
+                    </div>
+
+                    <div class="hours-section">
+                        <h3>Opening Hours</h3>
+                        <div class="hours-grid">
+                            <div class="hours-item">
+                                <span class="day">Monday - Thursday</span>
+                                <span class="time">5:00 PM - 10:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Friday - Saturday</span>
+                                <span class="time">5:00 PM - 11:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="day">Sunday</span>
+                                <span class="time">4:00 PM - 9:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <div class="map-content">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <h3>Interactive Map</h3>
+                            <p>123 Culinary Street<br>Food City, FC 12345</p>
+                            <div class="map-buttons">
+                                <button class="map-btn" onclick="getDirections()">
+                                    <i class="fas fa-directions"></i> Get Directions
+                                </button>
+                                <button class="map-btn" onclick="viewOnMap()">
+                                    <i class="fas fa-external-link-alt"></i> View on Maps
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="transportation-section">
+                <h2>How to Get Here</h2>
+                <div class="transport-grid">
+                    <div class="transport-card">
+                        <div class="transport-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>By Car</h3>
+                        <p><strong>Parking:</strong> Valet parking available<br>
+                           <strong>Street Parking:</strong> Available after 6 PM<br>
+                           <strong>Public Garage:</strong> City Center Garage (2 blocks)</p>
+                    </div>
+                    
+                    <div class="transport-card">
+                        <div class="transport-icon">
+                            <i class="fas fa-subway"></i>
+                        </div>
+                        <h3>Public Transit</h3>
+                        <p><strong>Metro:</strong> Downtown Station (5 min walk)<br>
+                           <strong>Bus Lines:</strong> 12, 34, 56<br>
+                           <strong>Stop:</strong> Culinary District</p>
+                    </div>
+                    
+                    <div class="transport-card">
+                        <div class="transport-icon">
+                            <i class="fas fa-walking"></i>
+                        </div>
+                        <h3>Walking</h3>
+                        <p><strong>From Hotel District:</strong> 8 minutes<br>
+                           <strong>From Shopping Center:</strong> 12 minutes<br>
+                           <strong>From Convention Center:</strong> 15 minutes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="nearby-section">
+        <div class="container">
+            <h2>Nearby Attractions</h2>
+            <div class="nearby-grid">
+                <div class="nearby-item">
+                    <img src="https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg" alt="Art Gallery">
+                    <div class="nearby-content">
+                        <h3>City Art Gallery</h3>
+                        <p class="distance">2 blocks away</p>
+                        <p>Contemporary art exhibitions and local artist showcases</p>
+                    </div>
+                </div>
+                
+                <div class="nearby-item">
+                    <img src="https://images.pexels.com/photos/1834327/pexels-photo-1834327.jpeg" alt="Theater">
+                    <div class="nearby-content">
+                        <h3>Downtown Theater</h3>
+                        <p class="distance">3 blocks away</p>
+                        <p>Live performances, musicals, and cultural events</p>
+                    </div>
+                </div>
+                
+                <div class="nearby-item">
+                    <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="Shopping">
+                    <div class="nearby-content">
+                        <h3>Heritage Shopping District</h3>
+                        <p class="distance">4 blocks away</p>
+                        <p>Boutique shops, cafes, and local markets</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Purna Fork</h3>
+                    <p>Experience culinary excellence in the heart of the city</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="reservation.html">Reservations</a></li>
+                        <li><a href="location.html">Location</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@thepurnafork.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Culinary Street, Food City</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Purna Fork. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

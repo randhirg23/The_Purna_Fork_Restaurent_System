@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin & Kitchen Control - The Purna Fork</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body style="background-color: var(--bg-primary);">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>The Purna Fork <span style="font-size: 13px; color: var(--accent-gold); font-family: 'Poppins', sans-serif; font-weight: 500; background: rgba(212, 175, 55, 0.15); padding: 3px 8px; border-radius: 12px; margin-left: 8px;">ADMIN PORTAL</span></h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Live Website</a></li>
+                <li class="nav-item"><a href="menu.html" class="nav-link">Menu Catalog</a></li>
+                <li class="nav-item"><a href="reservation.html" class="nav-link">Reservations</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-container" id="adminApp">
+        <div class="container">
+            <!-- Header Title -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+                <div>
+                    <h1 style="font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 2.2rem;">Restaurant Operations Hub</h1>
+                    <p style="color: var(--text-secondary); font-size: 14px;">Live order fulfillment, real-time table seating & dynamic menu inventory control.</p>
+                </div>
+                <button class="btn btn-primary" onclick="document.getElementById('addDishSection').scrollIntoView({ behavior: 'smooth' })">
+                    <i class="fas fa-plus" style="margin-right: 6px;"></i> Add New Dish
+                </button>
+            </div>
+
+            <!-- KPI Metric Cards -->
+            <div class="admin-kpi-grid">
+                <div class="admin-kpi-card">
+                    <div class="admin-kpi-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <div>
+                        <div style="font-size: 13px; color: var(--text-secondary);">Total Revenue</div>
+                        <div class="admin-kpi-val" id="kpiRevenue">$0.00</div>
+                    </div>
+                </div>
+                <div class="admin-kpi-card">
+                    <div class="admin-kpi-icon"><i class="fas fa-receipt"></i></div>
+                    <div>
+                        <div style="font-size: 13px; color: var(--text-secondary);">Orders Processed</div>
+                        <div class="admin-kpi-val" id="kpiOrders">0</div>
+                    </div>
+                </div>
+                <div class="admin-kpi-card">
+                    <div class="admin-kpi-icon"><i class="fas fa-calendar-check"></i></div>
+                    <div>
+                        <div style="font-size: 13px; color: var(--text-secondary);">Active Bookings</div>
+                        <div class="admin-kpi-val" id="kpiReservations">0</div>
+                    </div>
+                </div>
+                <div class="admin-kpi-card">
+                    <div class="admin-kpi-icon"><i class="fas fa-utensils"></i></div>
+                    <div>
+                        <div style="font-size: 13px; color: var(--text-secondary);">Menu Catalog Items</div>
+                        <div class="admin-kpi-val" id="kpiDishes">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Navigation Tabs -->
+            <div class="admin-tabs">
+                <button class="admin-tab-btn active" data-tab="orders" onclick="switchAdminTab('orders')"><i class="fas fa-fire"></i> Live Kitchen Orders</button>
+                <button class="admin-tab-btn" data-tab="menu" onclick="switchAdminTab('menu')"><i class="fas fa-book-open"></i> Menu & Inventory</button>
+                <button class="admin-tab-btn" data-tab="reservations" onclick="switchAdminTab('reservations')"><i class="fas fa-chair"></i> Table Seating & Guests</button>
+            </div>
+
+            <!-- TAB 1: Live Kitchen Orders -->
+            <div id="tab-orders" class="admin-tab-content" style="display: block;">
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer & Contact</th>
+                                <th>Type</th>
+                                <th>Ordered Dishes & Notes</th>
+                                <th>Amount</th>
+                                <th>Kitchen Status Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminOrdersBody">
+                            <!-- Rendered by script.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- TAB 2: Menu & Stock Management -->
+            <div id="tab-menu" class="admin-tab-content" style="display: none;">
+                <div class="admin-table-wrapper" style="margin-bottom: 30px;">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Dish Name</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Stock Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminMenuBody">
+                            <!-- Rendered by script.js -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Add Dish Section -->
+                <div id="addDishSection" class="history-card" style="padding: 24px;">
+                    <h3 style="font-family: 'Playfair Display', serif; color: var(--accent-gold); margin-bottom: 16px;">
+                        <i class="fas fa-plus-circle"></i> Create New Menu Item
+                    </h3>
+                    <form id="addDishForm" onsubmit="handleAdminAddDish(event)">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 14px;">
+                            <div>
+                                <label style="font-size: 12px; color: var(--text-secondary);">Dish Title *</label>
+                                <input type="text" id="newDishName" class="coupon-input" style="width: 100%;" required placeholder="e.g. Lobster Thermidor" />
+                            </div>
+                            <div>
+                                <label style="font-size: 12px; color: var(--text-secondary);">Price ($ USD) *</label>
+                                <input type="number" step="0.5" id="newDishPrice" class="coupon-input" style="width: 100%;" required placeholder="34.50" />
+                            </div>
+                            <div>
+                                <label style="font-size: 12px; color: var(--text-secondary);">Category *</label>
+                                <select id="newDishCategory" class="coupon-input" style="width: 100%;">
+                                    <option value="non-vegetarian">Non-Vegetarian</option>
+                                    <option value="vegetarian">Vegetarian</option>
+                                    <option value="special">Chef Special</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 14px;">
+                            <label style="font-size: 12px; color: var(--text-secondary);">Image URL *</label>
+                            <input type="url" id="newDishImage" class="coupon-input" style="width: 100%;" required placeholder="https://images.pexels.com/..." value="https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=800" />
+                        </div>
+                        <div style="margin-bottom: 18px;">
+                            <label style="font-size: 12px; color: var(--text-secondary);">Detailed Description</label>
+                            <textarea id="newDishDesc" class="coupon-input" style="width: 100%; height: 70px;" placeholder="Describe flavors, cooking method, ingredients..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Publish Dish to Menu</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- TAB 3: Reservations & Seating -->
+            <div id="tab-reservations" class="admin-tab-content" style="display: none;">
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Booking Ref</th>
+                                <th>Primary Guest</th>
+                                <th>Date & Time</th>
+                                <th>Party Size</th>
+                                <th>Table Allocated</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminReservationsBody">
+                            <!-- Rendered by script.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer" style="margin-top: 60px;">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Purna Fork Executive Management Console.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

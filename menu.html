@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Menu & Online Ordering - The Purna Fork</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#D4AF37">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>The Purna Fork</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="reservation.html" class="nav-link">Reservation</a></li>
+                <li class="nav-item"><a href="location.html" class="nav-link">Location</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero menu-hero" style="min-height: 280px; padding-top: 110px; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover;">
+        <div class="hero-content">
+            <span class="slot-badge available" style="margin-bottom: 8px;">Fresh Daily Preparations</span>
+            <h1 style="font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 2.6rem;">Artisanal Culinary Menu</h1>
+            <p style="color: #ddd;">Discover our chef's signature creations. Customize flavors and order online.</p>
+        </div>
+    </section>
+
+    <section class="menu-section" style="padding: 60px 0;">
+        <div class="container">
+            <!-- Search & Filters Container -->
+            <div style="margin-bottom: 30px; display: flex; flex-direction: column; gap: 16px; align-items: center;">
+                <!-- Category Filter Buttons -->
+                <div class="menu-filters">
+                    <button class="filter-btn active" data-filter="all">All Items</button>
+                    <button class="filter-btn" data-filter="vegetarian">Vegetarian</button>
+                    <button class="filter-btn" data-filter="non-vegetarian">Non-Vegetarian</button>
+                    <button class="filter-btn" data-filter="special">Chef's Special</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Menu Grid Container -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Dynamically populated from Database API via script.js -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 40px;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 32px; color: var(--accent-gold);"></i>
+                    <p style="margin-top: 10px; color: var(--text-secondary);">Loading gourmet dishes...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Purna Fork</h3>
+                    <p>Experience culinary excellence in the heart of the city.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="menu.html">Menu & Ordering</a></li>
+                        <li><a href="reservation.html">Table Reservations</a></li>
+                        <li><a href="account.html">VIP Loyalty Portal</a></li>
+                        <li><a href="admin.html">Staff Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@thepurnafork.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Culinary Street, Food City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Purna Fork. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
